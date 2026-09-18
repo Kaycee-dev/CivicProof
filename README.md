@@ -4,7 +4,7 @@
 
 CivicProof helps an ordinary citizen inspect public-project evidence without having to assemble a case from scattered records. It is a Transparency & Accountability proof of concept for the OSF × Andela hackathon, built from a human-originated thesis and a bounded five-dossier historical Nigerian roads corpus.
 
-This is the approved public CivicProof hackathon proof of concept. Operator Gate 7 release approval is complete. Repository publication and static deployment are authorized after final preflight; no live deployment is claimed here. Hackathon submission is not yet authorized.
+This is the approved public CivicProof hackathon proof of concept. [Live demo](https://civicproof.pages.dev) · [Public repository](https://github.com/Kaycee-dev/CivicProof). Operator Gate 7 release approval, public repository verification and live smoke tests are complete. Hackathon submission is not yet authorized.
 
 ## What you can do
 
@@ -70,7 +70,7 @@ Public tests cover frozen semantics, candidates/exclusions, answer grounding, fi
 
 Search Umuahia → C01 → five dimensions → provenance → distinguish appropriation, contract sum and certification → payment/completion questions → unresolved C09/C12 → exact verification export. The approved local implementation has completed this paced 2–4 minute flow. The release reproduction record independently records the actual candidate run; the automated pacing includes narration dwell time and is not a human usability trial.
 
-Screenshots generated from this candidate: [search](docs/screenshots/search.png), [strong dossier](docs/screenshots/C01-dossier.png), [provenance](docs/screenshots/provenance.png), [unresolved C12](docs/screenshots/C12-dossier.png). These are locally captured release-candidate screens; no live deployment is claimed.
+Screenshots generated from this candidate: [search](docs/screenshots/search.png), [strong dossier](docs/screenshots/C01-dossier.png), [provenance](docs/screenshots/provenance.png), [unresolved C12](docs/screenshots/C12-dossier.png). These locally captured screens use the same artifacts as the verified public demo.
 
 ## AI-use disclosure
 

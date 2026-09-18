@@ -1,16 +1,27 @@
-# Static deployment preparation — not executed
+# Verified static deployment
 
-Recommended path: Cloudflare Pages Direct Upload of the verified `apps/web/out` directory. This accepts the existing static export, requires no backend, and avoids rebuilding facts on a hosting service. [Official Direct Upload documentation](https://developers.cloudflare.com/pages/get-started/direct-upload/) and [Pages CLI reference](https://developers.cloudflare.com/workers/wrangler/commands/pages/).
+Live demo: https://civicproof.pages.dev
 
-Operator Gate 7 release approval is complete. After all final pre-publication checks pass, the authorized operator can authenticate Wrangler and execute:
+Public repository: https://github.com/Kaycee-dev/CivicProof
+
+Deployment URL: https://859db965.civicproof.pages.dev
+
+Production deployment identifier: `859db965-8762-4692-8c84-be4623284705`.
+
+Source commit: `62b9dbb81b66d668908a15d034906a474640d870` (the initial clean public release). Subsequent live-URL documentation changes do not change the deployed application or its artifacts.
+
+Cloudflare Pages Direct Upload serves the locally verified static export. No cloud build, server functions, backend, runtime model or runtime data generation was enabled. The initial repository contains only the approved allowlist and no private development history. All five live verification downloads match the final local artifact bytes. Browser smoke tests cover search, five dossiers, dimensions, provenance, all fixed answers, candidate/excluded boundaries, narrow viewport and source-link failure behavior. All 64 served static-file bodies match the verified local export; the remaining `_headers` file is host configuration and its response behavior was checked.
+
+For a later explicitly authorized deployment, first repeat the documented local build and release checks, then use the existing Pages project:
 
 ```sh
-npx wrangler pages project create civicproof
-npx wrangler pages deploy apps/web/out --project-name civicproof
+npx wrangler pages deploy apps/web/out --project-name civicproof --branch main --commit-hash <verified-public-commit>
 ```
 
-Project-name availability and account access are not asserted. No account was connected, resource created, token requested or deployment executed in this preparation. The exact local public-only output and its SHA manifest are authoritative. Do not point hosting at the private research repository or use a cloud build with different inputs.
+The existing project is `civicproof`, production branch `main`. Wrangler 4.135.0 initially attempted Workers delegation during project creation; that failed without a deployment. The `pages project create civicproof --production-branch main --force` option created the required Pages project directly. Normal Pages deploy was used thereafter. Do not create a cloud build from the private workspace.
 
-Static routes are exported with trailing slashes; no server functions, rewrites, API routes or runtime environment variables are needed. Cache revalidation for artifact JSON and ordinary browser security headers can be supplied through the allowlisted `_headers` file. The artifact loader also checks exact build-pinned SHA before rendering. A custom domain is optional and not required for the capstone.
+Static routes have trailing slashes. The allowlisted `_headers` file supplies artifact cache revalidation, `nosniff` and referrer policy. The browser independently verifies build-pinned artifact SHA-256 before rendering. A Python-urllib byte-check request received Cloudflare error 1010; normal Chromium access succeeded without credentials or security-setting changes and verified every served file. This is an observed client-specific access limitation, not an artifact mismatch.
 
-The initial GitHub tree is prepared from the release allowlist only, with no private history or remote. Repository creation, initial public commit/push and deployment are authorized after successful final preflight; they have not yet been executed. README, MIT code license, data notice and canonical description/topics are included in the candidate.
+Gate 7 release execution is authorized and the live product is verified. Hackathon submission and final submission production remain separately gated. Source-data rights are separate from the CivicProof code license.
+
+Provider references: [Direct Upload](https://developers.cloudflare.com/pages/get-started/direct-upload/) and [Pages CLI](https://developers.cloudflare.com/workers/wrangler/commands/pages/).
