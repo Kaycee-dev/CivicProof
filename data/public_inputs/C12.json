@@ -1,0 +1,678 @@
+{
+  "schema_version": "1.0.0",
+  "corpus_version": "five-dossier-1.0.0",
+  "project": {
+    "id": "C12",
+    "title": "REHABILITATION OF UMUAHIA (IKWUANO)-IKOT EKPENE ROAD: UMUAHIA-UMUDIKE IN ABIA STATE",
+    "anchor_record_id": "budget-row"
+  },
+  "sources": [
+    {
+      "id": "appropriation-2019",
+      "institution": "Federal appropriation schedule / National Assembly",
+      "custodian": "Ministry of Solid Minerals Development government host",
+      "source_class": "appropriation",
+      "title": "Official-government-hosted 2019 appropriation schedule",
+      "url": "https://msmd.gov.ng/wp-content/uploads/2023/03/2019-Appropriation.pdf",
+      "retrieved_at": "2026-09-17T08:51:55.199524+00:00",
+      "sha256": "032b0c1e1a0b602ca97eb6eede11ee5ccd93fcb5f56bb5c2010012ae526c6451",
+      "original_filename": "2019-Appropriation.pdf",
+      "format": "PDF",
+      "document_created_at": "2019-05-09T11:32:37+01:00",
+      "historical": true,
+      "observation_date": null,
+      "limitations": [
+        "Table labelled 2019 APPROPRIATION ACT; running header/footer labelled 2019 APPROPRIATION BILL; official ministry-hosted schedule, not a separately authenticated signed enactment.",
+        "Annual provision is not payment, release or total contract cost."
+      ],
+      "publication": {
+        "disposition": "APPROVED_FACTUAL_SUBSET",
+        "authority": "CivicProof Controller, content review authorized by Operator Gate 7",
+        "reference": "publication/register.json; docs/PUBLICATION_REGISTER.md"
+      },
+      "review": {
+        "status": "VALIDATED",
+        "reviewer": "Independent Gate 5 corpus-admission agent",
+        "reference": "docs/evaluation/GATE_5_SOURCE_REVIEW.md",
+        "reviewed_on": "2026-09-17",
+        "content_sha256": "249ea00ab2e9ffdad7472889639cf36bc6bffdb261b4a9b9e5d22fa10f8e9d07",
+        "method": "Preserved-original SHA-256 check; fresh PDF extraction plus visual table review, or exact parsed JSONL original-line comparison; field-level transcription."
+      }
+    },
+    {
+      "id": "nocopo-ocp",
+      "institution": "Bureau of Public Procurement / NOCOPO-origin records",
+      "custodian": "Open Contracting Partnership compiled mirror",
+      "source_class": "open_contracting",
+      "title": "Historical Nigeria NOCOPO compiled open-contracting snapshot",
+      "url": "https://data.open-contracting.org/en/publication/64/download?name=full.jsonl.gz",
+      "retrieved_at": "2026-09-17T08:54:08.048640+00:00",
+      "sha256": "df47e520ae3d2573d05af7ebfdef74c7d96f7ef53c4a3f6f2158c37328b80d33",
+      "original_filename": "full.jsonl.gz",
+      "format": "JSONL_GZIP",
+      "document_created_at": null,
+      "historical": true,
+      "observation_date": null,
+      "limitations": [
+        "OCP mirror custody is distinct from direct BPP publisher custody; compiled record dates do not establish physical observation dates.",
+        "Two competing procurement candidates remain unresolved against the appropriation anchor. Values must not be merged, summed or selected.",
+        "No independently verified treasury payment or physical completion is established."
+      ],
+      "publication": {
+        "disposition": "APPROVED_FACTUAL_SUBSET",
+        "authority": "CivicProof Controller, content review authorized by Operator Gate 7",
+        "reference": "publication/register.json; docs/PUBLICATION_REGISTER.md"
+      },
+      "review": {
+        "status": "VALIDATED",
+        "reviewer": "Independent Gate 5 corpus-admission agent",
+        "reference": "docs/evaluation/GATE_5_SOURCE_REVIEW.md",
+        "reviewed_on": "2026-09-17",
+        "content_sha256": "2ee9c1f33584d8b6710850cb292de1ff50ee3e8758aa57ce8a53efa96c77e9c0",
+        "method": "Preserved-original SHA-256 check; fresh PDF extraction plus visual table review, or exact parsed JSONL original-line comparison; field-level transcription."
+      }
+    }
+  ],
+  "records": [
+    {
+      "id": "budget-row",
+      "source_id": "appropriation-2019",
+      "document_sha256": "032b0c1e1a0b602ca97eb6eede11ee5ccd93fcb5f56bb5c2010012ae526c6451",
+      "locator": {
+        "page": 655,
+        "row": "ERGP12130467"
+      },
+      "observations": [
+        {
+          "id": "budget.code",
+          "kind": "project_code",
+          "raw_value": "ERGP12130467",
+          "value": "ERGP12130467",
+          "currency": null,
+          "fiscal_year": null,
+          "source_field": "CODE",
+          "normalization": "identity",
+          "observation_date": null,
+          "missing_date_reason": "The source does not establish an observation date for this field; publication, award and milestone dates have separate meanings."
+        },
+        {
+          "id": "budget.route",
+          "kind": "route",
+          "raw_value": "REHABILITATION OF UMUAHIA (IKWUANO)-IKOT EKPENE ROAD: UMUAHIA-UMUDIKE IN ABIA STATE",
+          "value": "REHABILITATION OF UMUAHIA (IKWUANO)-IKOT EKPENE ROAD: UMUAHIA-UMUDIKE IN ABIA STATE",
+          "currency": null,
+          "fiscal_year": null,
+          "source_field": "LINE ITEM",
+          "normalization": "identity",
+          "observation_date": null,
+          "missing_date_reason": "The source does not establish an observation date for this field; publication, award and milestone dates have separate meanings."
+        },
+        {
+          "id": "budget.agency",
+          "kind": "agency",
+          "raw_value": "FEDERAL MINISTRY OF POWER WORKS & HOUSING - HQTRS",
+          "value": "FEDERAL MINISTRY OF POWER WORKS & HOUSING - HQTRS",
+          "currency": null,
+          "fiscal_year": null,
+          "source_field": "MDA",
+          "normalization": "identity",
+          "observation_date": null,
+          "missing_date_reason": "The source does not establish an observation date for this field; publication, award and milestone dates have separate meanings."
+        },
+        {
+          "id": "budget.location",
+          "kind": "location",
+          "raw_value": "Abia",
+          "value": "Abia",
+          "currency": null,
+          "fiscal_year": null,
+          "source_field": "LINE ITEM / State",
+          "normalization": "identity",
+          "observation_date": null,
+          "missing_date_reason": "The source does not establish an observation date for this field; publication, award and milestone dates have separate meanings."
+        },
+        {
+          "id": "budget.annual",
+          "kind": "annual_appropriation",
+          "raw_value": "600,000,000",
+          "value": "600000000",
+          "currency": "NGN",
+          "fiscal_year": 2019,
+          "source_field": "AMOUNT",
+          "normalization": "grouped_decimal",
+          "observation_date": null,
+          "missing_date_reason": "The source does not establish an observation date for this field; publication, award and milestone dates have separate meanings."
+        }
+      ],
+      "publication": {
+        "disposition": "APPROVED_FACTUAL_SUBSET",
+        "authority": "CivicProof Controller, content review authorized by Operator Gate 7",
+        "reference": "publication/register.json; docs/PUBLICATION_REGISTER.md"
+      },
+      "review": {
+        "status": "VALIDATED",
+        "reviewer": "Independent Gate 5 corpus-admission agent",
+        "reference": "docs/evaluation/GATE_5_SOURCE_REVIEW.md",
+        "reviewed_on": "2026-09-17",
+        "content_sha256": "c0d16e9e2cda690db6b0f227ea08b320bd6831285363d255386c6ce7a9ca09fd",
+        "method": "Preserved-original SHA-256 check; fresh PDF extraction plus visual table review, or exact parsed JSONL original-line comparison; field-level transcription."
+      }
+    },
+    {
+      "id": "ocp-line-45186",
+      "source_id": "nocopo-ocp",
+      "document_sha256": "df47e520ae3d2573d05af7ebfdef74c7d96f7ef53c4a3f6f2158c37328b80d33",
+      "locator": {
+        "line": 45186,
+        "row": "ocds-gyl66f-231001001-001233"
+      },
+      "observations": [
+        {
+          "id": "ocp45186.ocid",
+          "kind": "procurement_id",
+          "raw_value": "ocds-gyl66f-231001001-001233",
+          "value": "ocds-gyl66f-231001001-001233",
+          "currency": null,
+          "fiscal_year": null,
+          "source_field": "/ocid",
+          "normalization": "identity",
+          "observation_date": null,
+          "missing_date_reason": "The source does not establish an observation date for this field; publication, award and milestone dates have separate meanings."
+        },
+        {
+          "id": "ocp45186.route",
+          "kind": "route",
+          "raw_value": "REHABILITATION OF UMUAHIA (IKWUANO)-IKOT EKPENE ROAD: UMUAHIAUMUDIKE IN ABIA STATE C/NO.6562",
+          "value": "REHABILITATION OF UMUAHIA (IKWUANO)-IKOT EKPENE ROAD: UMUAHIAUMUDIKE IN ABIA STATE C/NO.6562",
+          "currency": null,
+          "fiscal_year": null,
+          "source_field": "/tender/title",
+          "normalization": "identity",
+          "observation_date": null,
+          "missing_date_reason": "The source does not establish an observation date for this field; publication, award and milestone dates have separate meanings."
+        },
+        {
+          "id": "ocp45186.agency",
+          "kind": "agency",
+          "raw_value": "FEDERAL MINISTRY OF WORKS & HOUSING - HQTRS",
+          "value": "FEDERAL MINISTRY OF WORKS & HOUSING - HQTRS",
+          "currency": null,
+          "fiscal_year": null,
+          "source_field": "/buyer/name",
+          "normalization": "identity",
+          "observation_date": null,
+          "missing_date_reason": "The source does not establish an observation date for this field; publication, award and milestone dates have separate meanings."
+        },
+        {
+          "id": "ocp45186.planning_description",
+          "kind": "planning_description",
+          "raw_value": "Rehabilitation of Umuahia (Ikwuano)-Ikot Ekpene Road Umuahia Umudike in Abia State, Contract No. 656",
+          "value": "Rehabilitation of Umuahia (Ikwuano)-Ikot Ekpene Road Umuahia Umudike in Abia State, Contract No. 656",
+          "currency": null,
+          "fiscal_year": null,
+          "source_field": "/planning/budget/project",
+          "normalization": "identity",
+          "observation_date": null,
+          "missing_date_reason": "The source does not establish an observation date for this field; publication, award and milestone dates have separate meanings."
+        },
+        {
+          "id": "ocp45186.publication",
+          "kind": "record_publication_date",
+          "raw_value": "2021-05-03T23:00:00Z",
+          "value": "2021-05-03T23:00:00Z",
+          "currency": null,
+          "fiscal_year": null,
+          "source_field": "/date",
+          "normalization": "identity",
+          "observation_date": null,
+          "missing_date_reason": "The source does not establish an observation date for this field; publication, award and milestone dates have separate meanings."
+        },
+        {
+          "id": "ocp45186.planning",
+          "kind": "planning_amount",
+          "raw_value": "600000000.0",
+          "value": "600000000.00",
+          "currency": "NGN",
+          "fiscal_year": null,
+          "source_field": "/planning/budget/amount/amount",
+          "normalization": "grouped_decimal",
+          "observation_date": null,
+          "missing_date_reason": "The source does not establish an observation date for this field; publication, award and milestone dates have separate meanings."
+        },
+        {
+          "id": "ocp45186.tender",
+          "kind": "tender_value",
+          "raw_value": "273540000.0",
+          "value": "273540000.00",
+          "currency": "NGN",
+          "fiscal_year": null,
+          "source_field": "/tender/value/amount",
+          "normalization": "grouped_decimal",
+          "observation_date": null,
+          "missing_date_reason": "The source does not establish an observation date for this field; publication, award and milestone dates have separate meanings."
+        },
+        {
+          "id": "ocp45186.award",
+          "kind": "award_value",
+          "raw_value": "273540000.0",
+          "value": "273540000.00",
+          "currency": "NGN",
+          "fiscal_year": null,
+          "source_field": "/awards/0/value/amount",
+          "normalization": "grouped_decimal",
+          "observation_date": null,
+          "missing_date_reason": "The source does not establish an observation date for this field; publication, award and milestone dates have separate meanings."
+        },
+        {
+          "id": "ocp45186.contract_sum",
+          "kind": "contract_sum",
+          "raw_value": "273540000.0",
+          "value": "273540000.00",
+          "currency": "NGN",
+          "fiscal_year": null,
+          "source_field": "/contracts/0/value/amount",
+          "normalization": "grouped_decimal",
+          "observation_date": null,
+          "missing_date_reason": "The source does not establish an observation date for this field; publication, award and milestone dates have separate meanings."
+        },
+        {
+          "id": "ocp45186.award_date",
+          "kind": "award_date",
+          "raw_value": "2019-12-27T00:00:00Z",
+          "value": "2019-12-27",
+          "currency": null,
+          "fiscal_year": null,
+          "source_field": "/awards/0/date",
+          "normalization": "iso_datetime_date",
+          "observation_date": null,
+          "missing_date_reason": "The source does not establish an observation date for this field; publication, award and milestone dates have separate meanings."
+        },
+        {
+          "id": "ocp45186.transaction",
+          "kind": "transaction_value",
+          "raw_value": "326728080.0",
+          "value": "326728080.00",
+          "currency": "NGN",
+          "fiscal_year": null,
+          "source_field": "/contracts/0/implementation/transactions/0/value/amount",
+          "normalization": "grouped_decimal",
+          "observation_date": null,
+          "missing_date_reason": "The source does not establish an observation date for this field; publication, award and milestone dates have separate meanings."
+        },
+        {
+          "id": "ocp45186.payee",
+          "kind": "payee_reference",
+          "raw_value": "NG-BPP-",
+          "value": "NG-BPP-",
+          "currency": null,
+          "fiscal_year": null,
+          "source_field": "/contracts/0/implementation/transactions/0/payee/id",
+          "normalization": "identity",
+          "observation_date": null,
+          "missing_date_reason": "The source does not establish an observation date for this field; publication, award and milestone dates have separate meanings."
+        },
+        {
+          "id": "ocp45186.milestone0.description",
+          "kind": "milestone_description",
+          "raw_value": "Assessment milestones for REHABILITATION OF UMUAHIA (IKWUANO)-IKOT EKPENE ROAD: UMUAHIAUMUDIKE IN ABIA STATE C/NO.6562",
+          "value": "Assessment milestones for REHABILITATION OF UMUAHIA (IKWUANO)-IKOT EKPENE ROAD: UMUAHIAUMUDIKE IN ABIA STATE C/NO.6562",
+          "currency": null,
+          "fiscal_year": null,
+          "source_field": "/contracts/0/implementation/milestones/0/description",
+          "normalization": "identity",
+          "observation_date": null,
+          "missing_date_reason": "The source does not establish an observation date for this field; publication, award and milestone dates have separate meanings."
+        },
+        {
+          "id": "ocp45186.milestone0.status",
+          "kind": "milestone_status",
+          "raw_value": "met",
+          "value": "met",
+          "currency": null,
+          "fiscal_year": null,
+          "source_field": "/contracts/0/implementation/milestones/0/status",
+          "normalization": "identity",
+          "observation_date": null,
+          "missing_date_reason": "The source does not establish an observation date for this field; publication, award and milestone dates have separate meanings."
+        },
+        {
+          "id": "ocp45186.milestone1.description",
+          "kind": "milestone_description",
+          "raw_value": "Approval milestones for Special Repairs of Owo-Ifon-Sobe (Edo State Border) Road R35 (A122), Ondo State",
+          "value": "Approval milestones for Special Repairs of Owo-Ifon-Sobe (Edo State Border) Road R35 (A122), Ondo State",
+          "currency": null,
+          "fiscal_year": null,
+          "source_field": "/contracts/0/implementation/milestones/1/description",
+          "normalization": "identity",
+          "observation_date": null,
+          "missing_date_reason": "The source does not establish an observation date for this field; publication, award and milestone dates have separate meanings."
+        },
+        {
+          "id": "ocp45186.milestone1.status",
+          "kind": "milestone_status",
+          "raw_value": "met",
+          "value": "met",
+          "currency": null,
+          "fiscal_year": null,
+          "source_field": "/contracts/0/implementation/milestones/1/status",
+          "normalization": "identity",
+          "observation_date": null,
+          "missing_date_reason": "The source does not establish an observation date for this field; publication, award and milestone dates have separate meanings."
+        }
+      ],
+      "publication": {
+        "disposition": "APPROVED_FACTUAL_SUBSET",
+        "authority": "CivicProof Controller, content review authorized by Operator Gate 7",
+        "reference": "publication/register.json; docs/PUBLICATION_REGISTER.md"
+      },
+      "review": {
+        "status": "VALIDATED",
+        "reviewer": "Independent Gate 5 corpus-admission agent",
+        "reference": "docs/evaluation/GATE_5_SOURCE_REVIEW.md",
+        "reviewed_on": "2026-09-17",
+        "content_sha256": "9f74bc8ee5e5d29d193d10e78758b92ae57798cfd00337cda4460a9015393973",
+        "method": "Preserved-original SHA-256 check; fresh PDF extraction plus visual table review, or exact parsed JSONL original-line comparison; field-level transcription."
+      }
+    },
+    {
+      "id": "ocp-line-48585",
+      "source_id": "nocopo-ocp",
+      "document_sha256": "df47e520ae3d2573d05af7ebfdef74c7d96f7ef53c4a3f6f2158c37328b80d33",
+      "locator": {
+        "line": 48585,
+        "row": "ocds-gyl66f-231001001-03210"
+      },
+      "observations": [
+        {
+          "id": "ocp48585.ocid",
+          "kind": "procurement_id",
+          "raw_value": "ocds-gyl66f-231001001-03210",
+          "value": "ocds-gyl66f-231001001-03210",
+          "currency": null,
+          "fiscal_year": null,
+          "source_field": "/ocid",
+          "normalization": "identity",
+          "observation_date": null,
+          "missing_date_reason": "The source does not establish an observation date for this field; publication, award and milestone dates have separate meanings."
+        },
+        {
+          "id": "ocp48585.route",
+          "kind": "route",
+          "raw_value": "REHABILITATION OF UMUAHIA (IKWUANO)-IKOT EKPENE ROAD (UMUAHIA-UMADIKE) IN ABIA STATE",
+          "value": "REHABILITATION OF UMUAHIA (IKWUANO)-IKOT EKPENE ROAD (UMUAHIA-UMADIKE) IN ABIA STATE",
+          "currency": null,
+          "fiscal_year": null,
+          "source_field": "/tender/title",
+          "normalization": "identity",
+          "observation_date": null,
+          "missing_date_reason": "The source does not establish an observation date for this field; publication, award and milestone dates have separate meanings."
+        },
+        {
+          "id": "ocp48585.agency",
+          "kind": "agency",
+          "raw_value": "FEDERAL MINISTRY OF WORKS & HOUSING - HQTRS",
+          "value": "FEDERAL MINISTRY OF WORKS & HOUSING - HQTRS",
+          "currency": null,
+          "fiscal_year": null,
+          "source_field": "/buyer/name",
+          "normalization": "identity",
+          "observation_date": null,
+          "missing_date_reason": "The source does not establish an observation date for this field; publication, award and milestone dates have separate meanings."
+        },
+        {
+          "id": "ocp48585.planning_description",
+          "kind": "planning_description",
+          "raw_value": "REHABILITATION OF UMUAHIA (IKWUANO)-IKOT EKPENE ROAD (UMUAHIA-UMADIKE)  IN ABIA STATE",
+          "value": "REHABILITATION OF UMUAHIA (IKWUANO)-IKOT EKPENE ROAD (UMUAHIA-UMADIKE)  IN ABIA STATE",
+          "currency": null,
+          "fiscal_year": null,
+          "source_field": "/planning/budget/project",
+          "normalization": "identity",
+          "observation_date": null,
+          "missing_date_reason": "The source does not establish an observation date for this field; publication, award and milestone dates have separate meanings."
+        },
+        {
+          "id": "ocp48585.publication",
+          "kind": "record_publication_date",
+          "raw_value": "2021-05-03T22:44:00Z",
+          "value": "2021-05-03T22:44:00Z",
+          "currency": null,
+          "fiscal_year": null,
+          "source_field": "/date",
+          "normalization": "identity",
+          "observation_date": null,
+          "missing_date_reason": "The source does not establish an observation date for this field; publication, award and milestone dates have separate meanings."
+        },
+        {
+          "id": "ocp48585.planning",
+          "kind": "planning_amount",
+          "raw_value": "380330375.0",
+          "value": "380330375.00",
+          "currency": "NGN",
+          "fiscal_year": null,
+          "source_field": "/planning/budget/amount/amount",
+          "normalization": "grouped_decimal",
+          "observation_date": null,
+          "missing_date_reason": "The source does not establish an observation date for this field; publication, award and milestone dates have separate meanings."
+        },
+        {
+          "id": "ocp48585.tender",
+          "kind": "tender_value",
+          "raw_value": "13296283968.66",
+          "value": "13296283968.66",
+          "currency": "NGN",
+          "fiscal_year": null,
+          "source_field": "/tender/value/amount",
+          "normalization": "grouped_decimal",
+          "observation_date": null,
+          "missing_date_reason": "The source does not establish an observation date for this field; publication, award and milestone dates have separate meanings."
+        },
+        {
+          "id": "ocp48585.award",
+          "kind": "award_value",
+          "raw_value": "13296283968.66",
+          "value": "13296283968.66",
+          "currency": "NGN",
+          "fiscal_year": null,
+          "source_field": "/awards/0/value/amount",
+          "normalization": "grouped_decimal",
+          "observation_date": null,
+          "missing_date_reason": "The source does not establish an observation date for this field; publication, award and milestone dates have separate meanings."
+        },
+        {
+          "id": "ocp48585.contract_sum",
+          "kind": "contract_sum",
+          "raw_value": "13296283968.66",
+          "value": "13296283968.66",
+          "currency": "NGN",
+          "fiscal_year": null,
+          "source_field": "/contracts/0/value/amount",
+          "normalization": "grouped_decimal",
+          "observation_date": null,
+          "missing_date_reason": "The source does not establish an observation date for this field; publication, award and milestone dates have separate meanings."
+        },
+        {
+          "id": "ocp48585.award_date",
+          "kind": "award_date",
+          "raw_value": "2019-05-14T00:00:00Z",
+          "value": "2019-05-14",
+          "currency": null,
+          "fiscal_year": null,
+          "source_field": "/awards/0/date",
+          "normalization": "iso_datetime_date",
+          "observation_date": null,
+          "missing_date_reason": "The source does not establish an observation date for this field; publication, award and milestone dates have separate meanings."
+        },
+        {
+          "id": "ocp48585.contractor",
+          "kind": "contractor",
+          "raw_value": "HARTLAND NIGERIA LIMITED/RAYCON & COMPANY NIGERIA LIMITED",
+          "value": "HARTLAND NIGERIA LIMITED/RAYCON & COMPANY NIGERIA LIMITED",
+          "currency": null,
+          "fiscal_year": null,
+          "source_field": "/awards/0/suppliers/0/name",
+          "normalization": "identity",
+          "observation_date": null,
+          "missing_date_reason": "The source does not establish an observation date for this field; publication, award and milestone dates have separate meanings."
+        }
+      ],
+      "publication": {
+        "disposition": "APPROVED_FACTUAL_SUBSET",
+        "authority": "CivicProof Controller, content review authorized by Operator Gate 7",
+        "reference": "publication/register.json; docs/PUBLICATION_REGISTER.md"
+      },
+      "review": {
+        "status": "VALIDATED",
+        "reviewer": "Independent Gate 5 corpus-admission agent",
+        "reference": "docs/evaluation/GATE_5_SOURCE_REVIEW.md",
+        "reviewed_on": "2026-09-17",
+        "content_sha256": "ecef7fe20dedbedb3f65bc726acca0b05a25f53e0afa886a75b640750e2f76f3",
+        "method": "Preserved-original SHA-256 check; fresh PDF extraction plus visual table review, or exact parsed JSONL original-line comparison; field-level transcription."
+      }
+    }
+  ],
+  "identity_decisions": [
+    {
+      "id": "resolution:budget-row",
+      "project_id": "C12",
+      "record_id": "budget-row",
+      "anchor_record_id": "budget-row",
+      "record_sha256": "c0d16e9e2cda690db6b0f227ea08b320bd6831285363d255386c6ce7a9ca09fd",
+      "anchor_sha256": "c0d16e9e2cda690db6b0f227ea08b320bd6831285363d255386c6ce7a9ca09fd",
+      "state": "RESOLVED_MATCH",
+      "authority": "Operator Gates 1 and 4 corpus selection and constraints; independent preserved-source check",
+      "authority_reference": "docs/governance/04_OPERATOR_GATE_1_DECISION.md; docs/evaluation/GATE_5_SOURCE_REVIEW.md",
+      "reviewed_on": "2026-09-17",
+      "basis": [
+        {
+          "statement": "The approved appropriation anchor row defines this dossier.",
+          "observation_ids": [
+            "budget.code",
+            "budget.route"
+          ]
+        }
+      ],
+      "counterevidence": [],
+      "scope": "Historical documentary identity only. No verification of treasury payment, physical delivery or present-day condition."
+    },
+    {
+      "id": "resolution:ocp-line-45186",
+      "project_id": "C12",
+      "record_id": "ocp-line-45186",
+      "anchor_record_id": "budget-row",
+      "record_sha256": "9f74bc8ee5e5d29d193d10e78758b92ae57798cfd00337cda4460a9015393973",
+      "anchor_sha256": "c0d16e9e2cda690db6b0f227ea08b320bd6831285363d255386c6ce7a9ca09fd",
+      "state": "POSSIBLE_MATCH",
+      "authority": "Operator Gates 1 and 4 corpus selection and constraints; independent preserved-source check",
+      "authority_reference": "docs/governance/04_OPERATOR_GATE_1_DECISION.md; docs/evaluation/GATE_5_SOURCE_REVIEW.md",
+      "reviewed_on": "2026-09-17",
+      "basis": [
+        {
+          "statement": "Route wording and ministry provide a candidate lead only; no shared ERGP code or uniquely established contract links the procurement record to the budget anchor.",
+          "observation_ids": [
+            "budget.route",
+            "ocp45186.route",
+            "ocp45186.agency"
+          ]
+        },
+        {
+          "statement": "Distinct procurement identifier is retained without deduplication or selection.",
+          "observation_ids": [
+            "ocp45186.ocid"
+          ]
+        }
+      ],
+      "counterevidence": [
+        "Competing procurement record has a different award amount/date. Same-project comparability is unresolved; no amount-based join is permitted.",
+        "Planning project ends Contract No. 656 while tender title says C/NO.6562; supplier/payee identity is incomplete and transaction date is absent."
+      ],
+      "scope": "Historical documentary identity only. No verification of treasury payment, physical delivery or present-day condition."
+    },
+    {
+      "id": "resolution:ocp-line-48585",
+      "project_id": "C12",
+      "record_id": "ocp-line-48585",
+      "anchor_record_id": "budget-row",
+      "record_sha256": "ecef7fe20dedbedb3f65bc726acca0b05a25f53e0afa886a75b640750e2f76f3",
+      "anchor_sha256": "c0d16e9e2cda690db6b0f227ea08b320bd6831285363d255386c6ce7a9ca09fd",
+      "state": "POSSIBLE_MATCH",
+      "authority": "Operator Gates 1 and 4 corpus selection and constraints; independent preserved-source check",
+      "authority_reference": "docs/governance/04_OPERATOR_GATE_1_DECISION.md; docs/evaluation/GATE_5_SOURCE_REVIEW.md",
+      "reviewed_on": "2026-09-17",
+      "basis": [
+        {
+          "statement": "Route wording and ministry provide a candidate lead only; no shared ERGP code or uniquely established contract links the procurement record to the budget anchor.",
+          "observation_ids": [
+            "budget.route",
+            "ocp48585.route",
+            "ocp48585.agency"
+          ]
+        },
+        {
+          "statement": "Distinct procurement identifier is retained without deduplication or selection.",
+          "observation_ids": [
+            "ocp48585.ocid"
+          ]
+        }
+      ],
+      "counterevidence": [
+        "Competing procurement record has a different award amount/date. Same-project comparability is unresolved; no amount-based join is permitted."
+      ],
+      "scope": "Historical documentary identity only. No verification of treasury payment, physical delivery or present-day condition."
+    }
+  ],
+  "exclusions": [
+    {
+      "observation_id": "ocp45186.milestone1.description",
+      "state": "EXCLUDED_FOR_PROPOSITION",
+      "propositions": [
+        "implementation",
+        "completed"
+      ],
+      "reason": "Milestone 38160 explicitly concerns Special Repairs of Owo-Ifon-Sobe (Edo State Border) Road R35 (A122), Ondo State, not this Umuahia route. Status met is not physical completion.",
+      "authority_reference": "docs/evaluation/GATE_5_SOURCE_REVIEW.md"
+    },
+    {
+      "observation_id": "ocp45186.milestone1.status",
+      "state": "EXCLUDED_FOR_PROPOSITION",
+      "propositions": [
+        "implementation",
+        "completed"
+      ],
+      "reason": "Milestone 38160 explicitly concerns Special Repairs of Owo-Ifon-Sobe (Edo State Border) Road R35 (A122), Ondo State, not this Umuahia route. Status met is not physical completion.",
+      "authority_reference": "docs/evaluation/GATE_5_SOURCE_REVIEW.md"
+    }
+  ],
+  "coverage": {
+    "id": "coverage:c12-spike",
+    "cutoff": "2026-09-17",
+    "reviewed_source_ids": [
+      "appropriation-2019",
+      "nocopo-ocp"
+    ],
+    "reviewed_record_ids": [
+      "budget-row",
+      "ocp-line-45186",
+      "ocp-line-48585"
+    ],
+    "attempts": [
+      {
+        "source_url": "https://www.opentreasury.gov.ng/index.php/component/content/article/175-y-2025/12396-2025-daily-payment-report-fgn",
+        "outcome": "Connection timeout; no project-level treasury document retrieved.",
+        "attempted_at": "2026-09-17T08:52:51.361173+00:00",
+        "reference": "docs/research/evidence/retrieval_log.jsonl"
+      }
+    ],
+    "limit": "Bounded preserved research corpus only; original source values independently checked. Only the appropriation anchor is accepted. Candidate records remain outside accepted project findings; unresolved identity is not evidence of nonexistence.",
+    "publication": {
+      "disposition": "APPROVED_FACTUAL_SUBSET",
+      "authority": "CivicProof Controller, content review authorized by Operator Gate 7",
+      "reference": "publication/register.json; docs/PUBLICATION_REGISTER.md"
+    }
+  },
+  "publication": {
+    "disposition": "APPROVED_FACTUAL_SUBSET",
+    "authority": "CivicProof Controller, content review authorized by Operator Gate 7",
+    "reference": "publication/register.json; docs/PUBLICATION_REGISTER.md"
+  }
+}

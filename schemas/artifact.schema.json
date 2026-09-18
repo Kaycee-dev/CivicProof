@@ -1,0 +1,546 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "semantic": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0.0"
+        },
+        "corpus_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "rules_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "publication_mode": {
+          "enum": [
+            "LOCAL_REVIEW",
+            "RELEASABLE"
+          ]
+        },
+        "publication": {
+          "$ref": "https://civicproof.local/schemas/common.json#/$defs/publication"
+        },
+        "hashes": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "input_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "rules_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "schemas_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "compiler_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            }
+          },
+          "required": [
+            "input_sha256",
+            "rules_sha256",
+            "schemas_sha256",
+            "compiler_sha256"
+          ]
+        },
+        "project": {
+          "$ref": "https://civicproof.local/schemas/common.json#/$defs/project"
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "$ref": "https://civicproof.local/schemas/common.json#/$defs/source"
+          },
+          "minItems": 1
+        },
+        "coverage": {
+          "$ref": "https://civicproof.local/schemas/common.json#/$defs/coverage"
+        },
+        "identity_decisions": {
+          "type": "array",
+          "items": {
+            "$ref": "https://civicproof.local/schemas/common.json#/$defs/decision"
+          },
+          "minItems": 1
+        },
+        "evidence": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "accepted": {
+              "type": "array",
+              "items": {
+                "allOf": [
+                  {
+                    "$ref": "https://civicproof.local/schemas/common.json#/$defs/partition_record"
+                  },
+                  {
+                    "properties": {
+                      "identity_state": {
+                        "const": "RESOLVED_MATCH"
+                      }
+                    }
+                  }
+                ]
+              },
+              "minItems": 0
+            },
+            "candidates": {
+              "type": "array",
+              "items": {
+                "allOf": [
+                  {
+                    "$ref": "https://civicproof.local/schemas/common.json#/$defs/partition_record"
+                  },
+                  {
+                    "properties": {
+                      "identity_state": {
+                        "enum": [
+                          "POSSIBLE_MATCH",
+                          "REJECTED_MATCH"
+                        ]
+                      }
+                    }
+                  }
+                ]
+              },
+              "minItems": 0
+            },
+            "excluded": {
+              "type": "array",
+              "items": {
+                "$ref": "https://civicproof.local/schemas/common.json#/$defs/partition_excluded"
+              },
+              "minItems": 0
+            }
+          },
+          "required": [
+            "accepted",
+            "candidates",
+            "excluded"
+          ]
+        },
+        "findings": {
+          "type": "array",
+          "items": {
+            "$ref": "https://civicproof.local/schemas/common.json#/$defs/finding"
+          },
+          "minItems": 1
+        },
+        "stages": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "dimension": {
+                "enum": [
+                  "appropriation",
+                  "procurement",
+                  "award",
+                  "payment",
+                  "implementation"
+                ]
+              },
+              "proposition": {
+                "type": "string",
+                "minLength": 1
+              },
+              "evidence_state": {
+                "enum": [
+                  "SUPPORTED",
+                  "INCOMPLETE",
+                  "CONFLICTING",
+                  "UNVERIFIABLE",
+                  "NOT APPLICABLE"
+                ]
+              },
+              "finding_id": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "dimension",
+              "proposition",
+              "evidence_state",
+              "finding_id"
+            ]
+          },
+          "minItems": 5,
+          "maxItems": 5,
+          "allOf": [
+            {
+              "contains": {
+                "properties": {
+                  "dimension": {
+                    "const": "appropriation"
+                  }
+                },
+                "required": [
+                  "dimension"
+                ]
+              },
+              "minContains": 1,
+              "maxContains": 1
+            },
+            {
+              "contains": {
+                "properties": {
+                  "dimension": {
+                    "const": "procurement"
+                  }
+                },
+                "required": [
+                  "dimension"
+                ]
+              },
+              "minContains": 1,
+              "maxContains": 1
+            },
+            {
+              "contains": {
+                "properties": {
+                  "dimension": {
+                    "const": "award"
+                  }
+                },
+                "required": [
+                  "dimension"
+                ]
+              },
+              "minContains": 1,
+              "maxContains": 1
+            },
+            {
+              "contains": {
+                "properties": {
+                  "dimension": {
+                    "const": "payment"
+                  }
+                },
+                "required": [
+                  "dimension"
+                ]
+              },
+              "minContains": 1,
+              "maxContains": 1
+            },
+            {
+              "contains": {
+                "properties": {
+                  "dimension": {
+                    "const": "implementation"
+                  }
+                },
+                "required": [
+                  "dimension"
+                ]
+              },
+              "minContains": 1,
+              "maxContains": 1
+            }
+          ]
+        },
+        "answers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "question_id": {
+                "enum": [
+                  "known",
+                  "payment",
+                  "completed"
+                ]
+              },
+              "question": {
+                "type": "string",
+                "minLength": 1
+              },
+              "clauses": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "text": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "finding_refs": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "minItems": 1
+                    }
+                  },
+                  "required": [
+                    "text",
+                    "finding_refs"
+                  ]
+                },
+                "minItems": 1
+              }
+            },
+            "required": [
+              "question_id",
+              "question",
+              "clauses"
+            ]
+          },
+          "minItems": 3,
+          "maxItems": 3,
+          "allOf": [
+            {
+              "contains": {
+                "properties": {
+                  "question_id": {
+                    "const": "known"
+                  }
+                },
+                "required": [
+                  "question_id"
+                ]
+              },
+              "minContains": 1,
+              "maxContains": 1
+            },
+            {
+              "contains": {
+                "properties": {
+                  "question_id": {
+                    "const": "payment"
+                  }
+                },
+                "required": [
+                  "question_id"
+                ]
+              },
+              "minContains": 1,
+              "maxContains": 1
+            },
+            {
+              "contains": {
+                "properties": {
+                  "question_id": {
+                    "const": "completed"
+                  }
+                },
+                "required": [
+                  "question_id"
+                ]
+              },
+              "minContains": 1,
+              "maxContains": 1
+            }
+          ]
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        }
+      },
+      "required": [
+        "schema_version",
+        "corpus_version",
+        "rules_version",
+        "publication_mode",
+        "publication",
+        "hashes",
+        "project",
+        "sources",
+        "coverage",
+        "identity_decisions",
+        "evidence",
+        "findings",
+        "stages",
+        "answers",
+        "limitations"
+      ],
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "publication_mode": {
+                "const": "RELEASABLE"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "publication": {
+                "properties": {
+                  "disposition": {
+                    "enum": [
+                      "APPROVED_FACTUAL_SUBSET",
+                      "APPROVED_EXTRACT"
+                    ]
+                  },
+                  "authority": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "reference": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              },
+              "sources": {
+                "items": {
+                  "properties": {
+                    "publication": {
+                      "properties": {
+                        "disposition": {
+                          "enum": [
+                            "APPROVED_FACTUAL_SUBSET",
+                            "APPROVED_EXTRACT"
+                          ]
+                        },
+                        "authority": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "reference": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "coverage": {
+                "properties": {
+                  "publication": {
+                    "properties": {
+                      "disposition": {
+                        "enum": [
+                          "APPROVED_FACTUAL_SUBSET",
+                          "APPROVED_EXTRACT"
+                        ]
+                      },
+                      "authority": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "reference": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    }
+                  }
+                }
+              },
+              "evidence": {
+                "properties": {
+                  "accepted": {
+                    "items": {
+                      "properties": {
+                        "publication": {
+                          "properties": {
+                            "disposition": {
+                              "enum": [
+                                "APPROVED_FACTUAL_SUBSET",
+                                "APPROVED_EXTRACT"
+                              ]
+                            },
+                            "authority": {
+                              "type": "string",
+                              "minLength": 1
+                            },
+                            "reference": {
+                              "type": "string",
+                              "minLength": 1
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "candidates": {
+                    "items": {
+                      "properties": {
+                        "publication": {
+                          "properties": {
+                            "disposition": {
+                              "enum": [
+                                "APPROVED_FACTUAL_SUBSET",
+                                "APPROVED_EXTRACT"
+                              ]
+                            },
+                            "authority": {
+                              "type": "string",
+                              "minLength": 1
+                            },
+                            "reference": {
+                              "type": "string",
+                              "minLength": 1
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "excluded": {
+                    "items": {
+                      "properties": {
+                        "publication": {
+                          "properties": {
+                            "disposition": {
+                              "enum": [
+                                "APPROVED_FACTUAL_SUBSET",
+                                "APPROVED_EXTRACT"
+                              ]
+                            },
+                            "authority": {
+                              "type": "string",
+                              "minLength": 1
+                            },
+                            "reference": {
+                              "type": "string",
+                              "minLength": 1
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "semantic_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    }
+  },
+  "required": [
+    "semantic",
+    "semantic_sha256"
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://civicproof.local/schemas/artifact.json"
+}

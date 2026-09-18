@@ -1,0 +1,394 @@
+{
+  "schema_version": "1.0.0",
+  "corpus_version": "five-dossier-1.0.0",
+  "project": {
+    "id": "C09",
+    "title": "CONSTRUCTION OF OLOKORO-AHIAUKWU-AMANGWO-UMUAJATA-NGWA ROAD C/NO. 6063",
+    "anchor_record_id": "budget-row"
+  },
+  "sources": [
+    {
+      "id": "appropriation-2019",
+      "institution": "Federal appropriation schedule / National Assembly",
+      "custodian": "Ministry of Solid Minerals Development government host",
+      "source_class": "appropriation",
+      "title": "Official-government-hosted 2019 appropriation schedule",
+      "url": "https://msmd.gov.ng/wp-content/uploads/2023/03/2019-Appropriation.pdf",
+      "retrieved_at": "2026-09-17T08:51:55.199524+00:00",
+      "sha256": "032b0c1e1a0b602ca97eb6eede11ee5ccd93fcb5f56bb5c2010012ae526c6451",
+      "original_filename": "2019-Appropriation.pdf",
+      "format": "PDF",
+      "document_created_at": "2019-05-09T11:32:37+01:00",
+      "historical": true,
+      "observation_date": null,
+      "limitations": [
+        "Table labelled 2019 APPROPRIATION ACT; running header/footer labelled 2019 APPROPRIATION BILL; official ministry-hosted schedule, not a separately authenticated signed enactment.",
+        "Annual provision is not payment, release or total contract cost."
+      ],
+      "publication": {
+        "disposition": "APPROVED_FACTUAL_SUBSET",
+        "authority": "CivicProof Controller, content review authorized by Operator Gate 7",
+        "reference": "publication/register.json; docs/PUBLICATION_REGISTER.md"
+      },
+      "review": {
+        "status": "VALIDATED",
+        "reviewer": "Independent Gate 5 corpus-admission agent",
+        "reference": "docs/evaluation/GATE_5_SOURCE_REVIEW.md",
+        "reviewed_on": "2026-09-17",
+        "content_sha256": "249ea00ab2e9ffdad7472889639cf36bc6bffdb261b4a9b9e5d22fa10f8e9d07",
+        "method": "Preserved-original SHA-256 check; fresh PDF extraction plus visual table review, or exact parsed JSONL original-line comparison; field-level transcription."
+      }
+    },
+    {
+      "id": "works-southeast",
+      "institution": "Federal Ministry of Power, Works and Housing (Works), South-East Unit",
+      "custodian": "Federal Ministry of Works",
+      "source_class": "official_implementation",
+      "title": "Historical Works South-East highways report",
+      "url": "https://fmw.gov.ng/themes/front_end_themes_01/images/uploads_images/1562349980.pdf",
+      "retrieved_at": "2026-09-17T08:52:52.803387+00:00",
+      "sha256": "17f8e177061f36426859f6ed45faefd4af06d077b9d678271baf10d6aade7364",
+      "original_filename": "1562349980.pdf",
+      "format": "PDF",
+      "document_created_at": "2019-07-05T00:57:28+01:00",
+      "historical": true,
+      "observation_date": null,
+      "limitations": [
+        "Metadata is a file timestamp, not a verified observation date. Not evidence of 2026 condition.",
+        "Amount certified to date is not independently verified treasury payment."
+      ],
+      "publication": {
+        "disposition": "APPROVED_FACTUAL_SUBSET",
+        "authority": "CivicProof Controller, content review authorized by Operator Gate 7",
+        "reference": "publication/register.json; docs/PUBLICATION_REGISTER.md"
+      },
+      "review": {
+        "status": "VALIDATED",
+        "reviewer": "Independent Gate 5 corpus-admission agent",
+        "reference": "docs/evaluation/GATE_5_SOURCE_REVIEW.md",
+        "reviewed_on": "2026-09-17",
+        "content_sha256": "9027969d259c94673b5f78a7dce98af5f2788247f90206afa986cece60e519f2",
+        "method": "Preserved-original SHA-256 check; fresh PDF extraction plus visual table review, or exact parsed JSONL original-line comparison; field-level transcription."
+      }
+    }
+  ],
+  "records": [
+    {
+      "id": "budget-row",
+      "source_id": "appropriation-2019",
+      "document_sha256": "032b0c1e1a0b602ca97eb6eede11ee5ccd93fcb5f56bb5c2010012ae526c6451",
+      "locator": {
+        "page": 664,
+        "row": "ERGP12131115"
+      },
+      "observations": [
+        {
+          "id": "budget.code",
+          "kind": "project_code",
+          "raw_value": "ERGP12131115",
+          "value": "ERGP12131115",
+          "currency": null,
+          "fiscal_year": null,
+          "source_field": "CODE",
+          "normalization": "identity",
+          "observation_date": null,
+          "missing_date_reason": "The source does not establish an observation date for this field; publication, award and milestone dates have separate meanings."
+        },
+        {
+          "id": "budget.route",
+          "kind": "route",
+          "raw_value": "CONSTRUCTION OF OLOKORO-AHIAUKWU-AMANGWO-UMUAJATA-NGWA ROAD C/NO. 6063",
+          "value": "CONSTRUCTION OF OLOKORO-AHIAUKWU-AMANGWO-UMUAJATA-NGWA ROAD C/NO. 6063",
+          "currency": null,
+          "fiscal_year": null,
+          "source_field": "LINE ITEM",
+          "normalization": "identity",
+          "observation_date": null,
+          "missing_date_reason": "The source does not establish an observation date for this field; publication, award and milestone dates have separate meanings."
+        },
+        {
+          "id": "budget.contract",
+          "kind": "contract_number",
+          "raw_value": "6063",
+          "value": "6063",
+          "currency": null,
+          "fiscal_year": null,
+          "source_field": "LINE ITEM / C/NO.",
+          "normalization": "identity",
+          "observation_date": null,
+          "missing_date_reason": "The source does not establish an observation date for this field; publication, award and milestone dates have separate meanings."
+        },
+        {
+          "id": "budget.agency",
+          "kind": "agency",
+          "raw_value": "FEDERAL MINISTRY OF POWER WORKS & HOUSING - HQTRS",
+          "value": "FEDERAL MINISTRY OF POWER WORKS & HOUSING - HQTRS",
+          "currency": null,
+          "fiscal_year": null,
+          "source_field": "MDA",
+          "normalization": "identity",
+          "observation_date": null,
+          "missing_date_reason": "The source does not establish an observation date for this field; publication, award and milestone dates have separate meanings."
+        },
+        {
+          "id": "budget.annual",
+          "kind": "annual_appropriation",
+          "raw_value": "204,205,050",
+          "value": "204205050",
+          "currency": "NGN",
+          "fiscal_year": 2019,
+          "source_field": "AMOUNT",
+          "normalization": "grouped_decimal",
+          "observation_date": null,
+          "missing_date_reason": "The source does not establish an observation date for this field; publication, award and milestone dates have separate meanings."
+        }
+      ],
+      "publication": {
+        "disposition": "APPROVED_FACTUAL_SUBSET",
+        "authority": "CivicProof Controller, content review authorized by Operator Gate 7",
+        "reference": "publication/register.json; docs/PUBLICATION_REGISTER.md"
+      },
+      "review": {
+        "status": "VALIDATED",
+        "reviewer": "Independent Gate 5 corpus-admission agent",
+        "reference": "docs/evaluation/GATE_5_SOURCE_REVIEW.md",
+        "reviewed_on": "2026-09-17",
+        "content_sha256": "ebc8959395335f6f1fb1928b36f7b2c90ef8a27d1f90433b46bc0116fcfa4394",
+        "method": "Preserved-original SHA-256 check; fresh PDF extraction plus visual table review, or exact parsed JSONL original-line comparison; field-level transcription."
+      }
+    },
+    {
+      "id": "works-row",
+      "source_id": "works-southeast",
+      "document_sha256": "17f8e177061f36426859f6ed45faefd4af06d077b9d678271baf10d6aade7364",
+      "locator": {
+        "page": 1,
+        "row": "S/N 3"
+      },
+      "observations": [
+        {
+          "id": "works.route",
+          "kind": "route",
+          "raw_value": "Rehabilitation of Olokoro-Ahiaukwu- Itaja-Obuohia- Isicourt- Ikwuano Road in Abia State, Contract No. 6063",
+          "value": "Rehabilitation of Olokoro-Ahiaukwu- Itaja-Obuohia- Isicourt- Ikwuano Road in Abia State, Contract No. 6063",
+          "currency": null,
+          "fiscal_year": null,
+          "source_field": "Project Title",
+          "normalization": "identity",
+          "observation_date": null,
+          "missing_date_reason": "The source does not establish an observation date for this field; publication, award and milestone dates have separate meanings."
+        },
+        {
+          "id": "works.contract",
+          "kind": "contract_number",
+          "raw_value": "6063",
+          "value": "6063",
+          "currency": null,
+          "fiscal_year": null,
+          "source_field": "Project Title / Contact No.",
+          "normalization": "identity",
+          "observation_date": null,
+          "missing_date_reason": "The source does not establish an observation date for this field; publication, award and milestone dates have separate meanings."
+        },
+        {
+          "id": "works.location",
+          "kind": "location",
+          "raw_value": "Abia",
+          "value": "Abia",
+          "currency": null,
+          "fiscal_year": null,
+          "source_field": "Project Title / State",
+          "normalization": "identity",
+          "observation_date": null,
+          "missing_date_reason": "The source does not establish an observation date for this field; publication, award and milestone dates have separate meanings."
+        },
+        {
+          "id": "works.agency",
+          "kind": "agency",
+          "raw_value": "FEDERAL MINISTRY OF POWER, WORKS AND HOUSING (WORKS)",
+          "value": "FEDERAL MINISTRY OF POWER, WORKS AND HOUSING (WORKS)",
+          "currency": null,
+          "fiscal_year": null,
+          "source_field": "Report heading / Ministry",
+          "normalization": "identity",
+          "observation_date": null,
+          "missing_date_reason": "The source does not establish an observation date for this field; publication, award and milestone dates have separate meanings."
+        },
+        {
+          "id": "works.contractor",
+          "kind": "contractor",
+          "raw_value": "Rhas Nig. Ltd",
+          "value": "Rhas Nig. Ltd",
+          "currency": null,
+          "fiscal_year": null,
+          "source_field": "Name of Contractor",
+          "normalization": "identity",
+          "observation_date": null,
+          "missing_date_reason": "The source does not establish an observation date for this field; publication, award and milestone dates have separate meanings."
+        },
+        {
+          "id": "works.sum",
+          "kind": "contract_sum",
+          "raw_value": "990,673,340.30",
+          "value": "990673340.30",
+          "currency": "NGN",
+          "fiscal_year": null,
+          "source_field": "Contract Sum (N:K)",
+          "normalization": "grouped_decimal",
+          "observation_date": null,
+          "missing_date_reason": "The source does not establish an observation date for this field; publication, award and milestone dates have separate meanings."
+        },
+        {
+          "id": "works.certified",
+          "kind": "amount_certified",
+          "raw_value": "497,087,800.91",
+          "value": "497087800.91",
+          "currency": "NGN",
+          "fiscal_year": null,
+          "source_field": "Amount Certified To Date (N)",
+          "normalization": "grouped_decimal",
+          "observation_date": null,
+          "missing_date_reason": "The source does not establish an observation date for this field; publication, award and milestone dates have separate meanings."
+        },
+        {
+          "id": "works.progress",
+          "kind": "reported_percent_complete",
+          "raw_value": "61",
+          "value": "61",
+          "currency": null,
+          "fiscal_year": null,
+          "source_field": "% Completion to date",
+          "normalization": "percent",
+          "observation_date": null,
+          "missing_date_reason": "The source does not establish an observation date for this field; publication, award and milestone dates have separate meanings."
+        },
+        {
+          "id": "works.award_date",
+          "kind": "award_date",
+          "raw_value": "March 2, 2010",
+          "value": "2010-03-02",
+          "currency": null,
+          "fiscal_year": null,
+          "source_field": "Contract Award Date",
+          "normalization": "english_date",
+          "observation_date": null,
+          "missing_date_reason": "The source does not establish an observation date for this field; publication, award and milestone dates have separate meanings."
+        },
+        {
+          "id": "works.remark",
+          "kind": "source_remark",
+          "raw_value": "Slow work progress",
+          "value": "Slow work progress",
+          "currency": null,
+          "fiscal_year": null,
+          "source_field": "Remarks",
+          "normalization": "identity",
+          "observation_date": null,
+          "missing_date_reason": "The source does not establish an observation date for this field; publication, award and milestone dates have separate meanings."
+        }
+      ],
+      "publication": {
+        "disposition": "APPROVED_FACTUAL_SUBSET",
+        "authority": "CivicProof Controller, content review authorized by Operator Gate 7",
+        "reference": "publication/register.json; docs/PUBLICATION_REGISTER.md"
+      },
+      "review": {
+        "status": "VALIDATED",
+        "reviewer": "Independent Gate 5 corpus-admission agent",
+        "reference": "docs/evaluation/GATE_5_SOURCE_REVIEW.md",
+        "reviewed_on": "2026-09-17",
+        "content_sha256": "e022e671b1a3d0438d96a6eebe093a64c648f84c7f008c52fcf3c049eaa9d8b0",
+        "method": "Preserved-original SHA-256 check; fresh PDF extraction plus visual table review, or exact parsed JSONL original-line comparison; field-level transcription."
+      }
+    }
+  ],
+  "identity_decisions": [
+    {
+      "id": "resolution:budget-row",
+      "project_id": "C09",
+      "record_id": "budget-row",
+      "anchor_record_id": "budget-row",
+      "record_sha256": "ebc8959395335f6f1fb1928b36f7b2c90ef8a27d1f90433b46bc0116fcfa4394",
+      "anchor_sha256": "ebc8959395335f6f1fb1928b36f7b2c90ef8a27d1f90433b46bc0116fcfa4394",
+      "state": "RESOLVED_MATCH",
+      "authority": "Operator Gates 1 and 4 corpus selection and constraints; independent preserved-source check",
+      "authority_reference": "docs/governance/04_OPERATOR_GATE_1_DECISION.md; docs/evaluation/GATE_5_SOURCE_REVIEW.md",
+      "reviewed_on": "2026-09-17",
+      "basis": [
+        {
+          "statement": "The approved appropriation anchor row defines this dossier.",
+          "observation_ids": [
+            "budget.code",
+            "budget.route"
+          ]
+        }
+      ],
+      "counterevidence": [],
+      "scope": "Historical documentary identity only. No verification of treasury payment, physical delivery or present-day condition."
+    },
+    {
+      "id": "resolution:works-row",
+      "project_id": "C09",
+      "record_id": "works-row",
+      "anchor_record_id": "budget-row",
+      "record_sha256": "e022e671b1a3d0438d96a6eebe093a64c648f84c7f008c52fcf3c049eaa9d8b0",
+      "anchor_sha256": "ebc8959395335f6f1fb1928b36f7b2c90ef8a27d1f90433b46bc0116fcfa4394",
+      "state": "POSSIBLE_MATCH",
+      "authority": "Operator Gates 1 and 4 corpus selection and constraints; independent preserved-source check",
+      "authority_reference": "docs/governance/04_OPERATOR_GATE_1_DECISION.md; docs/evaluation/GATE_5_SOURCE_REVIEW.md",
+      "reviewed_on": "2026-09-17",
+      "basis": [
+        {
+          "statement": "The source rows share the contract number; this alone cannot establish route identity.",
+          "observation_ids": [
+            "budget.contract",
+            "works.contract"
+          ]
+        },
+        {
+          "statement": "Contract 6063 agrees, but budget route continues Amangwo-Umuajata-Ngwa while Works says Itaja-Obuohia-Isicourt-Ikwuano. Do not collapse entities or carry values across the proposed link.",
+          "observation_ids": [
+            "budget.route",
+            "works.route"
+          ]
+        }
+      ],
+      "counterevidence": [
+        "Budget route continues Amangwo-Umuajata-Ngwa; Works route continues Itaja-Obuohia-Isicourt-Ikwuano. No equivalence is established."
+      ],
+      "scope": "Historical documentary identity only. No verification of treasury payment, physical delivery or present-day condition."
+    }
+  ],
+  "exclusions": [],
+  "coverage": {
+    "id": "coverage:c09-spike",
+    "cutoff": "2026-09-17",
+    "reviewed_source_ids": [
+      "appropriation-2019",
+      "works-southeast"
+    ],
+    "reviewed_record_ids": [
+      "budget-row",
+      "works-row"
+    ],
+    "attempts": [
+      {
+        "source_url": "https://www.opentreasury.gov.ng/index.php/component/content/article/175-y-2025/12396-2025-daily-payment-report-fgn",
+        "outcome": "Connection timeout; no project-level treasury document retrieved.",
+        "attempted_at": "2026-09-17T08:52:51.361173+00:00",
+        "reference": "docs/research/evidence/retrieval_log.jsonl"
+      }
+    ],
+    "limit": "Bounded preserved research corpus only; original source values independently checked. Only the appropriation anchor is accepted. Candidate records remain outside accepted project findings; unresolved identity is not evidence of nonexistence.",
+    "publication": {
+      "disposition": "APPROVED_FACTUAL_SUBSET",
+      "authority": "CivicProof Controller, content review authorized by Operator Gate 7",
+      "reference": "publication/register.json; docs/PUBLICATION_REGISTER.md"
+    }
+  },
+  "publication": {
+    "disposition": "APPROVED_FACTUAL_SUBSET",
+    "authority": "CivicProof Controller, content review authorized by Operator Gate 7",
+    "reference": "publication/register.json; docs/PUBLICATION_REGISTER.md"
+  }
+}

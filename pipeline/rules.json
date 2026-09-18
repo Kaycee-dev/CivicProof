@@ -1,0 +1,90 @@
+{
+  "rules_version": "1.1.0",
+  "supported_source_classes": [
+    "appropriation",
+    "official_implementation",
+    "open_contracting"
+  ],
+  "dimensions": {
+    "appropriation": {
+      "proposition": "This official-government-hosted appropriation schedule records this line and annual amount.",
+      "required_kinds": [
+        "project_code",
+        "annual_appropriation"
+      ],
+      "partial_kinds": [
+        "project_code",
+        "annual_appropriation"
+      ],
+      "source_class": "appropriation"
+    },
+    "procurement": {
+      "proposition": "An identifiable procurement process is established for this dossier's scope.",
+      "required_kinds": [
+        "procurement_reference",
+        "tender_value"
+      ],
+      "partial_kinds": [
+        "planning_amount",
+        "tender_value"
+      ],
+      "source_class": "procurement"
+    },
+    "award": {
+      "proposition": "Award details are established for this dossier's scope.",
+      "required_kinds": [
+        "award_identifier",
+        "award_value",
+        "contractor",
+        "award_date"
+      ],
+      "partial_kinds": [
+        "contract_sum",
+        "contractor",
+        "award_date"
+      ],
+      "source_class": "official_implementation"
+    },
+    "payment": {
+      "proposition": "Qualifying evidence establishes a treasury payment for this dossier.",
+      "required_kinds": [
+        "independent_treasury_verification",
+        "transaction_value"
+      ],
+      "partial_kinds": [
+        "transaction_value"
+      ],
+      "source_class": "treasury/payment"
+    },
+    "implementation": {
+      "proposition": "Available evidence establishes physical implementation or delivery for this dossier.",
+      "required_kinds": [
+        "independent_delivery_verification"
+      ],
+      "partial_kinds": [
+        "reported_percent_complete",
+        "source_remark"
+      ],
+      "source_class": "official_implementation"
+    }
+  },
+  "scope_limit": "Five-dossier local review: appropriation, historical Works reports and candidate open-contracting observations. Procurement candidate identity is unresolved; no treasury or independent completion evidence is admitted.",
+  "financial_labels": {
+    "annual_appropriation": "Amount in the appropriation schedule",
+    "planning_amount": "Amount in this planning record",
+    "tender_value": "Value recorded for this tender",
+    "award_value": "Value recorded for this award",
+    "contract_sum": "Contract sum reported in the historical Works record",
+    "amount_certified": "Amount certified in the historical Works report; not verified payment",
+    "transaction_value": "Value in this transaction record; not verified treasury payment"
+  },
+  "limitations": [
+    "Historical documentary evidence only; present-day physical condition is not established.",
+    "The Works observation date is unknown; PDF creation and retrieval dates are not observation dates.",
+    "The appropriation source is an official-government-hosted 2019 appropriation schedule, not independently authenticated as the final signed legal instrument.",
+    "Amount certified is not independently verified treasury payment.",
+    "The five dimensions are evidence investigations, not a reconstructed complete expenditure lifecycle.",
+    "Hashes establish copy integrity, not institutional truth or authenticity.",
+    "Content-reviewed public hackathon proof of concept. Source-data rights are separate from the CivicProof code license."
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "corpus_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "project": {
+      "$ref": "https://civicproof.local/schemas/common.json#/$defs/project"
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "$ref": "https://civicproof.local/schemas/common.json#/$defs/source"
+      },
+      "minItems": 1
+    },
+    "records": {
+      "type": "array",
+      "items": {
+        "$ref": "https://civicproof.local/schemas/common.json#/$defs/record"
+      },
+      "minItems": 1
+    },
+    "identity_decisions": {
+      "type": "array",
+      "items": {
+        "$ref": "https://civicproof.local/schemas/common.json#/$defs/decision"
+      },
+      "minItems": 1
+    },
+    "exclusions": {
+      "type": "array",
+      "items": {
+        "$ref": "https://civicproof.local/schemas/common.json#/$defs/exclusion"
+      },
+      "minItems": 0
+    },
+    "coverage": {
+      "$ref": "https://civicproof.local/schemas/common.json#/$defs/coverage"
+    },
+    "publication": {
+      "$ref": "https://civicproof.local/schemas/common.json#/$defs/publication"
+    }
+  },
+  "required": [
+    "schema_version",
+    "corpus_version",
+    "project",
+    "sources",
+    "records",
+    "identity_decisions",
+    "exclusions",
+    "coverage",
+    "publication"
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://civicproof.local/schemas/reviewed-input.json"
+}

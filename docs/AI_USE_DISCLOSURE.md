@@ -1,0 +1,3 @@
+# AI-use disclosure
+
+The founding capstone thesis and civic problem originated with the human Operator. AI agents substantially assisted research, extraction/transcription, source comparison, architecture/product proposals, implementation, adversarial testing, independent task-based evaluation, release engineering and documentation, including autonomous tool use. The Operator retains authority over identity acceptance and gates. Deterministic software owns factual findings and three fixed answers; there is no runtime LLM authority over project conclusions. Agent review is not source-truth verification, legal certification or human usability research.

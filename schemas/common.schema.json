@@ -1,0 +1,1383 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://civicproof.local/schemas/common.json",
+  "$defs": {
+    "publication": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "disposition": {
+          "enum": [
+            "UNREVIEWED",
+            "RESTRICTED",
+            "APPROVED_FACTUAL_SUBSET",
+            "APPROVED_EXTRACT"
+          ]
+        },
+        "authority": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reference": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "disposition",
+        "authority",
+        "reference"
+      ]
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "institution": {
+          "type": "string",
+          "minLength": 1
+        },
+        "custodian": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_class": {
+          "enum": [
+            "appropriation",
+            "official_implementation",
+            "open_contracting"
+          ]
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "retrieved_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "original_filename": {
+          "type": "string",
+          "minLength": 1
+        },
+        "format": {
+          "enum": [
+            "PDF",
+            "JSONL_GZIP"
+          ]
+        },
+        "document_created_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "historical": {
+          "const": true
+        },
+        "observation_date": {
+          "type": "null"
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        },
+        "publication": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "disposition": {
+              "enum": [
+                "UNREVIEWED",
+                "RESTRICTED",
+                "APPROVED_FACTUAL_SUBSET",
+                "APPROVED_EXTRACT"
+              ]
+            },
+            "authority": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "reference": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "disposition",
+            "authority",
+            "reference"
+          ]
+        },
+        "review": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "status": {
+              "const": "VALIDATED"
+            },
+            "reviewer": {
+              "type": "string",
+              "minLength": 1
+            },
+            "reference": {
+              "type": "string",
+              "minLength": 1
+            },
+            "reviewed_on": {
+              "type": "string",
+              "format": "date"
+            },
+            "content_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "method": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "status",
+            "reviewer",
+            "reference",
+            "reviewed_on",
+            "content_sha256",
+            "method"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "institution",
+        "custodian",
+        "source_class",
+        "title",
+        "url",
+        "retrieved_at",
+        "sha256",
+        "original_filename",
+        "format",
+        "document_created_at",
+        "historical",
+        "observation_date",
+        "limitations",
+        "publication",
+        "review"
+      ]
+    },
+    "record": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "locator": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "page": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "row": {
+              "type": "string",
+              "minLength": 1
+            },
+            "line": {
+              "type": "integer",
+              "minimum": 1
+            }
+          },
+          "required": [
+            "row"
+          ],
+          "oneOf": [
+            {
+              "required": [
+                "page"
+              ],
+              "not": {
+                "required": [
+                  "line"
+                ]
+              }
+            },
+            {
+              "required": [
+                "line"
+              ],
+              "not": {
+                "required": [
+                  "page"
+                ]
+              }
+            }
+          ]
+        },
+        "observations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "kind": {
+                "enum": [
+                  "project_code",
+                  "contract_number",
+                  "route",
+                  "agency",
+                  "location",
+                  "contractor",
+                  "annual_appropriation",
+                  "planning_amount",
+                  "tender_value",
+                  "award_value",
+                  "contract_sum",
+                  "amount_certified",
+                  "transaction_value",
+                  "reported_percent_complete",
+                  "award_date",
+                  "source_remark",
+                  "procurement_id",
+                  "payee_reference",
+                  "milestone_description",
+                  "milestone_status",
+                  "planning_description",
+                  "record_publication_date"
+                ]
+              },
+              "raw_value": {
+                "type": "string",
+                "minLength": 1
+              },
+              "value": {
+                "type": "string",
+                "minLength": 1
+              },
+              "currency": {
+                "enum": [
+                  "NGN",
+                  null
+                ]
+              },
+              "fiscal_year": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 1900,
+                "maximum": 2100
+              },
+              "source_field": {
+                "type": "string",
+                "minLength": 1
+              },
+              "normalization": {
+                "enum": [
+                  "identity",
+                  "grouped_decimal",
+                  "percent",
+                  "english_date",
+                  "iso_datetime_date"
+                ]
+              },
+              "observation_date": {
+                "anyOf": [
+                  {
+                    "type": "null"
+                  },
+                  {
+                    "type": "string",
+                    "format": "date"
+                  }
+                ]
+              },
+              "missing_date_reason": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "required": [
+              "id",
+              "kind",
+              "raw_value",
+              "value",
+              "currency",
+              "fiscal_year",
+              "source_field",
+              "normalization",
+              "observation_date",
+              "missing_date_reason"
+            ]
+          },
+          "minItems": 1
+        },
+        "review": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "status": {
+              "const": "VALIDATED"
+            },
+            "reviewer": {
+              "type": "string",
+              "minLength": 1
+            },
+            "reference": {
+              "type": "string",
+              "minLength": 1
+            },
+            "reviewed_on": {
+              "type": "string",
+              "format": "date"
+            },
+            "content_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "method": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "status",
+            "reviewer",
+            "reference",
+            "reviewed_on",
+            "content_sha256",
+            "method"
+          ]
+        },
+        "publication": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "disposition": {
+              "enum": [
+                "UNREVIEWED",
+                "RESTRICTED",
+                "APPROVED_FACTUAL_SUBSET",
+                "APPROVED_EXTRACT"
+              ]
+            },
+            "authority": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "reference": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "disposition",
+            "authority",
+            "reference"
+          ]
+        },
+        "document_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      },
+      "required": [
+        "id",
+        "source_id",
+        "locator",
+        "observations",
+        "review",
+        "publication",
+        "document_sha256"
+      ]
+    },
+    "record_locator": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "page": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "row": {
+          "type": "string",
+          "minLength": 1
+        },
+        "line": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "required": [
+        "row"
+      ],
+      "oneOf": [
+        {
+          "required": [
+            "page"
+          ],
+          "not": {
+            "required": [
+              "line"
+            ]
+          }
+        },
+        {
+          "required": [
+            "line"
+          ],
+          "not": {
+            "required": [
+              "page"
+            ]
+          }
+        }
+      ]
+    },
+    "decision": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "project_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "record_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "anchor_record_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "record_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "anchor_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "state": {
+          "enum": [
+            "RESOLVED_MATCH",
+            "POSSIBLE_MATCH",
+            "REJECTED_MATCH"
+          ]
+        },
+        "authority": {
+          "type": "string",
+          "minLength": 1
+        },
+        "authority_reference": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reviewed_on": {
+          "type": "string",
+          "format": "date"
+        },
+        "basis": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "statement": {
+                "type": "string",
+                "minLength": 1
+              },
+              "observation_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "minItems": 1
+              }
+            },
+            "required": [
+              "statement",
+              "observation_ids"
+            ]
+          },
+          "minItems": 1
+        },
+        "counterevidence": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "scope": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "id",
+        "project_id",
+        "record_id",
+        "anchor_record_id",
+        "record_sha256",
+        "anchor_sha256",
+        "state",
+        "authority",
+        "authority_reference",
+        "reviewed_on",
+        "basis",
+        "counterevidence",
+        "scope"
+      ]
+    },
+    "exclusion": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "observation_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "state": {
+          "const": "EXCLUDED_FOR_PROPOSITION"
+        },
+        "propositions": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "appropriation",
+              "procurement",
+              "award",
+              "payment",
+              "implementation",
+              "completed"
+            ]
+          },
+          "minItems": 1
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        },
+        "authority_reference": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "observation_id",
+        "state",
+        "propositions",
+        "reason",
+        "authority_reference"
+      ]
+    },
+    "coverage": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "cutoff": {
+          "type": "string",
+          "format": "date"
+        },
+        "reviewed_source_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        },
+        "reviewed_record_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        },
+        "attempts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "source_url": {
+                "type": "string",
+                "format": "uri"
+              },
+              "outcome": {
+                "type": "string",
+                "minLength": 1
+              },
+              "attempted_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "reference": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "source_url",
+              "outcome",
+              "attempted_at",
+              "reference"
+            ]
+          },
+          "minItems": 1
+        },
+        "limit": {
+          "type": "string",
+          "minLength": 1
+        },
+        "publication": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "disposition": {
+              "enum": [
+                "UNREVIEWED",
+                "RESTRICTED",
+                "APPROVED_FACTUAL_SUBSET",
+                "APPROVED_EXTRACT"
+              ]
+            },
+            "authority": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "reference": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "disposition",
+            "authority",
+            "reference"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "cutoff",
+        "reviewed_source_ids",
+        "reviewed_record_ids",
+        "attempts",
+        "limit",
+        "publication"
+      ]
+    },
+    "project": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "anchor_record_id": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "anchor_record_id"
+      ]
+    },
+    "observation": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "kind": {
+          "enum": [
+            "project_code",
+            "contract_number",
+            "route",
+            "agency",
+            "location",
+            "contractor",
+            "annual_appropriation",
+            "planning_amount",
+            "tender_value",
+            "award_value",
+            "contract_sum",
+            "amount_certified",
+            "transaction_value",
+            "reported_percent_complete",
+            "award_date",
+            "source_remark",
+            "procurement_id",
+            "payee_reference",
+            "milestone_description",
+            "milestone_status",
+            "planning_description",
+            "record_publication_date"
+          ]
+        },
+        "raw_value": {
+          "type": "string",
+          "minLength": 1
+        },
+        "value": {
+          "type": "string",
+          "minLength": 1
+        },
+        "currency": {
+          "enum": [
+            "NGN",
+            null
+          ]
+        },
+        "fiscal_year": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1900,
+          "maximum": 2100
+        },
+        "source_field": {
+          "type": "string",
+          "minLength": 1
+        },
+        "normalization": {
+          "enum": [
+            "identity",
+            "grouped_decimal",
+            "percent",
+            "english_date",
+            "iso_datetime_date"
+          ]
+        },
+        "observation_date": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string",
+              "format": "date"
+            }
+          ]
+        },
+        "missing_date_reason": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "kind",
+        "raw_value",
+        "value",
+        "currency",
+        "fiscal_year",
+        "source_field",
+        "normalization",
+        "observation_date",
+        "missing_date_reason"
+      ]
+    },
+    "finding": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "subject": {
+          "type": "string",
+          "minLength": 1
+        },
+        "proposition": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evidence_state": {
+          "enum": [
+            "SUPPORTED",
+            "INCOMPLETE",
+            "CONFLICTING",
+            "UNVERIFIABLE",
+            "NOT APPLICABLE"
+          ]
+        },
+        "rule_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "observation_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "coverage_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "qualification": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "id",
+        "subject",
+        "proposition",
+        "evidence_state",
+        "rule_id",
+        "observation_refs",
+        "coverage_refs",
+        "qualification"
+      ]
+    },
+    "partition_record": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "record_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "locator": {
+          "$ref": "https://civicproof.local/schemas/common.json#/$defs/record_locator"
+        },
+        "identity_decision_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "identity_state": {
+          "enum": [
+            "RESOLVED_MATCH",
+            "POSSIBLE_MATCH",
+            "REJECTED_MATCH"
+          ]
+        },
+        "observations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "kind": {
+                "enum": [
+                  "project_code",
+                  "contract_number",
+                  "route",
+                  "agency",
+                  "location",
+                  "contractor",
+                  "annual_appropriation",
+                  "planning_amount",
+                  "tender_value",
+                  "award_value",
+                  "contract_sum",
+                  "amount_certified",
+                  "transaction_value",
+                  "reported_percent_complete",
+                  "award_date",
+                  "source_remark",
+                  "procurement_id",
+                  "payee_reference",
+                  "milestone_description",
+                  "milestone_status",
+                  "planning_description",
+                  "record_publication_date"
+                ]
+              },
+              "raw_value": {
+                "type": "string",
+                "minLength": 1
+              },
+              "value": {
+                "type": "string",
+                "minLength": 1
+              },
+              "currency": {
+                "enum": [
+                  "NGN",
+                  null
+                ]
+              },
+              "fiscal_year": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 1900,
+                "maximum": 2100
+              },
+              "source_field": {
+                "type": "string",
+                "minLength": 1
+              },
+              "normalization": {
+                "enum": [
+                  "identity",
+                  "grouped_decimal",
+                  "percent",
+                  "english_date",
+                  "iso_datetime_date"
+                ]
+              },
+              "observation_date": {
+                "anyOf": [
+                  {
+                    "type": "null"
+                  },
+                  {
+                    "type": "string",
+                    "format": "date"
+                  }
+                ]
+              },
+              "missing_date_reason": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "required": [
+              "id",
+              "kind",
+              "raw_value",
+              "value",
+              "currency",
+              "fiscal_year",
+              "source_field",
+              "normalization",
+              "observation_date",
+              "missing_date_reason"
+            ]
+          },
+          "minItems": 1
+        },
+        "review": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "status": {
+              "const": "VALIDATED"
+            },
+            "reviewer": {
+              "type": "string",
+              "minLength": 1
+            },
+            "reference": {
+              "type": "string",
+              "minLength": 1
+            },
+            "reviewed_on": {
+              "type": "string",
+              "format": "date"
+            },
+            "content_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "method": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "status",
+            "reviewer",
+            "reference",
+            "reviewed_on",
+            "content_sha256",
+            "method"
+          ]
+        },
+        "publication": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "disposition": {
+              "enum": [
+                "UNREVIEWED",
+                "RESTRICTED",
+                "APPROVED_FACTUAL_SUBSET",
+                "APPROVED_EXTRACT"
+              ]
+            },
+            "authority": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "reference": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "disposition",
+            "authority",
+            "reference"
+          ]
+        },
+        "document_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      },
+      "required": [
+        "record_id",
+        "source_id",
+        "locator",
+        "identity_decision_id",
+        "identity_state",
+        "observations",
+        "review",
+        "publication",
+        "document_sha256"
+      ]
+    },
+    "partition_excluded": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "record_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "locator": {
+          "$ref": "https://civicproof.local/schemas/common.json#/$defs/record_locator"
+        },
+        "identity_decision_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "identity_state": {
+          "enum": [
+            "RESOLVED_MATCH",
+            "POSSIBLE_MATCH",
+            "REJECTED_MATCH"
+          ]
+        },
+        "observation": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "kind": {
+              "enum": [
+                "project_code",
+                "contract_number",
+                "route",
+                "agency",
+                "location",
+                "contractor",
+                "annual_appropriation",
+                "planning_amount",
+                "tender_value",
+                "award_value",
+                "contract_sum",
+                "amount_certified",
+                "transaction_value",
+                "reported_percent_complete",
+                "award_date",
+                "source_remark",
+                "procurement_id",
+                "payee_reference",
+                "milestone_description",
+                "milestone_status",
+                "planning_description",
+                "record_publication_date"
+              ]
+            },
+            "raw_value": {
+              "type": "string",
+              "minLength": 1
+            },
+            "value": {
+              "type": "string",
+              "minLength": 1
+            },
+            "currency": {
+              "enum": [
+                "NGN",
+                null
+              ]
+            },
+            "fiscal_year": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "minimum": 1900,
+              "maximum": 2100
+            },
+            "source_field": {
+              "type": "string",
+              "minLength": 1
+            },
+            "normalization": {
+              "enum": [
+                "identity",
+                "grouped_decimal",
+                "percent",
+                "english_date",
+                "iso_datetime_date"
+              ]
+            },
+            "observation_date": {
+              "anyOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "type": "string",
+                  "format": "date"
+                }
+              ]
+            },
+            "missing_date_reason": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "id",
+            "kind",
+            "raw_value",
+            "value",
+            "currency",
+            "fiscal_year",
+            "source_field",
+            "normalization",
+            "observation_date",
+            "missing_date_reason"
+          ]
+        },
+        "exclusion": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "observation_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "state": {
+              "const": "EXCLUDED_FOR_PROPOSITION"
+            },
+            "propositions": {
+              "type": "array",
+              "items": {
+                "enum": [
+                  "appropriation",
+                  "procurement",
+                  "award",
+                  "payment",
+                  "implementation",
+                  "completed"
+                ]
+              },
+              "minItems": 1
+            },
+            "reason": {
+              "type": "string",
+              "minLength": 1
+            },
+            "authority_reference": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "observation_id",
+            "state",
+            "propositions",
+            "reason",
+            "authority_reference"
+          ]
+        },
+        "review": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "status": {
+              "const": "VALIDATED"
+            },
+            "reviewer": {
+              "type": "string",
+              "minLength": 1
+            },
+            "reference": {
+              "type": "string",
+              "minLength": 1
+            },
+            "reviewed_on": {
+              "type": "string",
+              "format": "date"
+            },
+            "content_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "method": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "status",
+            "reviewer",
+            "reference",
+            "reviewed_on",
+            "content_sha256",
+            "method"
+          ]
+        },
+        "publication": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "disposition": {
+              "enum": [
+                "UNREVIEWED",
+                "RESTRICTED",
+                "APPROVED_FACTUAL_SUBSET",
+                "APPROVED_EXTRACT"
+              ]
+            },
+            "authority": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "reference": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "disposition",
+            "authority",
+            "reference"
+          ]
+        },
+        "document_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      },
+      "required": [
+        "record_id",
+        "source_id",
+        "locator",
+        "identity_decision_id",
+        "identity_state",
+        "observation",
+        "exclusion",
+        "review",
+        "publication",
+        "document_sha256"
+      ]
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "disposition": "APPROVED_FOR_RELEASE",
+  "reviewer": "CivicProof Controller under Operator Gate 7 content-review authorization",
+  "review_date": "2026-09-18",
+  "basis": "Own application screenshots; visible content derives from the exact registered factual subset, includes historical and unresolved limitations. Visually inspected. No source page renders.",
+  "capture": "Final status-transition offline browser tests; verified same public artifacts and UI. These replace historical Gate-7-pending screenshots.",
+  "files": {
+    "search.png": "00f6b6448a6375113acfaa90dc2d0457b271d0fe9e5e4169b8ffe8e8bb87c578",
+    "C01-dossier.png": "f26be51c9f52129121bcb201cf104593b607e1b97f3805ca47c9e844dc18936c",
+    "provenance.png": "1b9957a8e92d75fddbad19496e8cd6191625687ca7d40d8e83f44131949d722f",
+    "C12-dossier.png": "806b0eabb89d7674e56fe9b5fd9a9f47f70f6323fed0958bd2392cbe374bbacb"
+  },
+  "artifact_sha256": {
+    "C01.json": "e03130d313896d743bc2b8085e0777b57d1220264981a42b5a87440ce45965b3",
+    "C02.json": "e809a02dfc7e92aaab71a4cb46cfaf3cb97e2ee86f16bb0db15e6d177c9653df",
+    "C06.json": "13a0c5b629e0ad8b7ac3bbaabc58f6f833c8d664eefc547db2b3d5604a422a05",
+    "C09.json": "24ac163e931a703d57ec36c9f392719a3d433eb94d4892f98154cd163cfa70f6",
+    "C12.json": "56873f7f2fa97bcc44858cfc049317af1f0a5f11f730e538a57d0a06b8a58555",
+    "index.json": "4ebce3789d37cb5b947eca90141e12680af96486e68526a10767582ec0d0216b"
+  }
+}
